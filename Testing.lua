@@ -9,6 +9,9 @@ getgenv().AutoBubble = false;
 getgenv().AutoPickups = false;
 getgenv().AutoPlaytime = false;
 getgenv().AutoChests = false;
+getgenv().AutoCraft = false;
+getgenv().AutoMarket = false;
+
 function doChests()
     while getgenv().AutoChests and wait(5) do
         local args = {[1] = "ClaimChest",[2] = "Void Chest",[3] = true}
@@ -79,6 +82,23 @@ function doCollectPickupsONCE()
         end
     end)
 end
+
+function doAutoMarket()
+    while getgenv().AutoMarket and wait(1) do
+        local args = {[1] = "BuyShopItem",[2] = "alien-shop",[3] = 3}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "BuyShopItem",[2] = "alien-shop",[3] = 2}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "BuyShopItem",[2] = "alien-shop",[3] = 1}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "BuyShopItem",[2] = "shard-shop",[3] = 3}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "BuyShopItem",[2] = "shard-shop",[3] = 2}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "BuyShopItem",[2] = "shard-shop",[3] = 1}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+    end
+end
 Main:Seperator()
 Main:Toggle("Auto Blow bubble",false, function(bool)
     getgenv().AutoBubble = bool
@@ -94,16 +114,67 @@ Main:Button("Auto collect Coins / Gems (once)", function()
     doCollectPickupsONCE()
 end)
 Main:Seperator()
-Main:Toggle("Auto Collect playtime rewards",false, function(bool)
+
+Main:Seperator()
+
+local Stuff = w1:Channel("Stuff")
+function doAutoCraft()
+    while getgenv().AutoCraft and wait() do
+        local args = {[1] = "CraftPotion",[2] = "Lucky",[3] = 2,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Lucky",[3] = 3,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Lucky",[3] = 4,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Lucky",[3] = 5,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Speed",[3] = 2,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Speed",[3] = 3,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Speed",[3] = 4,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Speed",[3] = 5,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Coins",[3] = 2,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Coins",[3] = 3,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Coins",[3] = 4,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Coins",[3] = 5,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Mythic",[3] = 2,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Mythic",[3] = 3,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Mythic",[3] = 4,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "CraftPotion",[2] = "Mythic",[3] = 5,[4] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+    end
+end
+
+Stuff:Toggle("Auto Collect playtime rewards",false, function(bool)
     getgenv().AutoPlaytime = bool
     doPlaytime()
 end)
-Main:Toggle("Auto Collect chests",false, function(bool)
+Stuff:Toggle("Auto Collect chests",false, function(bool)
     getgenv().AutoChests = bool
     doChests()
 end)
+Stuff:Toggle("Auto Craft",false, function(bool)
+    getgenv().AutoCraft = bool
+    doAutoCraft()
+end)
+Stuff:Toggle("Auto Buy markets",false, function(bool)
+    getgenv().AutoMarket = bool
+    doAutoMarket()
+end)
 
-Main:Seperator()
+
+
+
 
 local Eggs = w1:Channel("Eggs")
 getgenv().AutoEgg = false;
