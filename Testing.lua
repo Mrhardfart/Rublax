@@ -67,10 +67,6 @@ getgenv().SelectedEgg = "N/A";
 getgenv().Amount = 1
 
 function doAutoEgg()
-    if getgenv().AutoEgg == false then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
-    end
-
     if SelectedEgg == "Common Egg" and getgenv().AutoEgg then
         local New_CFrame = CFrame.new(-7, 9, -82)
         local char = game.Players.LocalPlayer.Character
@@ -83,7 +79,6 @@ function doAutoEgg()
     
     while getgenv().AutoEgg and wait() do
         if SelectedEgg == "Common Egg" then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
             local args = {[1] = "HatchEgg", [2] = "Common Egg", [3] = getgenv().Amount}
             game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
         end
@@ -103,10 +98,14 @@ end)
 
 Eggs:Toggle("Auto hatch Eggs",false, function(bool)
     getgenv().AutoEgg = bool
-    if bool == false then
+    doAutoEgg()
+end)
+Eggs:Toggle("Freeze Character",false, function(bool)
+    if bool then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+    elseif bool == false then
         game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
     end
-    doAutoEgg()
 end)
 
 local IslandsTeleport = w1:Channel("Teleport")
