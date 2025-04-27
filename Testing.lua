@@ -66,11 +66,28 @@ getgenv().AutoEgg = false;
 getgenv().SelectedEgg = "N/A";
 getgenv().Amount = 1
 
+function doAutoEgg()
+    while getgenv().AutoEgg and wait() do
+        if SelectedEgg == "Common Egg" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7, 9, -82)
+            local args = {[1] = "HatchEgg",[2] = "Common Egg",[3] = getgenv().Amount}
+            game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        end
+    end
+end
+Eggs:Label("Auto Hatch Eggs! (As fast as possible)")
+
 local EggsDrop = Eggs:Dropdown("Choose egg",{"Common Egg","Option 2","Option 3","Option 4","Option 5"}, function(bool)
     print("Selected Egg: ".. bool)
     getgenv().SelectedEgg = bool
 end)
+
 local EggsAmount = Eggs:Dropdown("Choose amount of Eggs to Hatch",{1,2,3,4,5,6}, function(bool)
     print("Selected Amount to hatch: ".. bool)
     getgenv().Amount = bool
+end)
+
+Eggs:Toggle("Auto hatch Eggs",false, function(bool)
+    getgenv().AutoEgg = bool
+    doAutoEgg()
 end)
