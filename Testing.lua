@@ -67,15 +67,29 @@ getgenv().SelectedEgg = "N/A";
 getgenv().Amount = 1
 
 function doAutoEgg()
+    if getgenv().AutoEgg == false then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+    end
+    
+    if SelectedEgg == "Common Egg" and getgenv().AutoEgg then
+        local New_CFrame = CFrame.new(-7, 9, -82)
+        local char = game.Players.LocalPlayer.Character
+        local ti = TweenInfo.new(5, Enum.EasingStyle.Linear)
+        local tp = {CFrame = New_CFrame}
+        local tween = game:GetService("TweenService"):Create(char.HumanoidRootPart, ti, tp)
+        tween:Play()
+        tween.Completed:Wait()
+    end
+    
     while getgenv().AutoEgg and wait() do
         if SelectedEgg == "Common Egg" then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7, 9, -82)
-            local args = {[1] = "HatchEgg",[2] = "Common Egg",[3] = getgenv().Amount}
+            game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+            local args = {[1] = "HatchEgg", [2] = "Common Egg", [3] = getgenv().Amount}
             game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
         end
-    end
+    end    
 end
-Eggs:Label("Auto Hatch Eggs! (As fast as possible)")
+Eggs:Label("Auto Hatch Eggs! (PLEASE DON'T MOVE WHILE TELEPORTING OR IT MIGHT CAUSE ISSUES!)")
 
 local EggsDrop = Eggs:Dropdown("Choose egg",{"Common Egg","Option 2","Option 3","Option 4","Option 5"}, function(bool)
     print("Selected Egg: ".. bool)
@@ -90,4 +104,26 @@ end)
 Eggs:Toggle("Auto hatch Eggs",false, function(bool)
     getgenv().AutoEgg = bool
     doAutoEgg()
+end)
+
+local IslandsTeleport = w1:Channel("Teleport")
+IslandsTeleport:Button("Floating Island", function()
+    local args = {[1] = "Teleport",[2] = "Workspace.Worlds.The Overworld.Islands.Floating Island.Island.Portal.Spawn"}
+    game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+end)
+IslandsTeleport:Button("Outer Space", function()
+    local args = {[1] = "Teleport",[2] = "Workspace.Worlds.The Overworld.Islands.Outer Space.Island.Portal.Spawn"}
+    game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+end)
+IslandsTeleport:Button("Twilight", function()
+    local args = {[1] = "Teleport",[2] = "Workspace.Worlds.The Overworld.Islands.Twilight.Island.Portal.Spawn"}
+    game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+end)
+IslandsTeleport:Button("The Void", function()
+    local args = {[1] = "Teleport",[2] = "Workspace.Worlds.The Overworld.Islands.The Void.Island.Portal.Spawn"}
+    game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+end)
+IslandsTeleport:Button("Zen", function()
+    local args = {[1] = "Teleport",[2] = "Workspace.Worlds.The Overworld.Islands.Zen.Island.Portal.Spawn"}
+    game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
 end)
