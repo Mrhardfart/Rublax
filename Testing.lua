@@ -60,3 +60,17 @@ Main:Button("Auto collect Coins / Gems (once)", function()
 end)
 
 Main:Seperator()
+
+local Eggs = w1:Channel("Eggs")
+getgenv().AutoEgg = false;
+getgenv().SelectedEgg = "N/A";
+getgenv().Amount = 1
+
+local EggsDrop = Eggs:Dropdown("Choose egg",{"Common Egg","Option 2","Option 3","Option 4","Option 5"}, function(bool)
+    print("Selected Egg: ".. bool)
+    getgenv().SelectedEgg = bool
+end)
+local EggsAmount = Eggs:Dropdown("Choose amount of Eggs to Hatch",{1,2,3,4,5,6}, function(bool)
+    print("Selected Amount to hatch: ".. bool)
+    getgenv().Amount = bool
+end)
