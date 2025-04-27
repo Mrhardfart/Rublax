@@ -8,7 +8,15 @@ local Main = w1:Channel("Main")
 getgenv().AutoBubble = false;
 getgenv().AutoPickups = false;
 getgenv().AutoPlaytime = false;
-
+getgenv().AutoChests = false;
+function doChests()
+    while getgenv().AutoChests and wait(5) do
+        local args = {[1] = "ClaimChest",[2] = "Void Chest",[3] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+        local args = {[1] = "ClaimChest",[2] = "Giant Chest",[3] = true}
+        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
+    end
+end
 function doBubble()
     while getgenv().AutoBubble and wait() do
         local args = {[1] = "BlowBubble"}
@@ -82,14 +90,17 @@ Main:Toggle("Auto collect Coins / Gems",false, function(bool)
 getgenv().AutoPickups = bool
 doCollectPickups()
 end)
+Main:Button("Auto collect Coins / Gems (once)", function()
+    doCollectPickupsONCE()
+end)
 Main:Seperator()
 Main:Toggle("Auto Collect playtime rewards",false, function(bool)
     getgenv().AutoPlaytime = bool
     doPlaytime()
 end)
-
-Main:Button("Auto collect Coins / Gems (once)", function()
-    doCollectPickupsONCE()
+Main:Toggle("Auto Collect chests",false, function(bool)
+    getgenv().AutoChests = bool
+    doChests()
 end)
 
 Main:Seperator()
@@ -99,23 +110,48 @@ getgenv().AutoEgg = false;
 getgenv().SpamAutoEgg = false;
 getgenv().SelectedEgg = "N/A";
 getgenv().Amount = 1
+function teleportToTween(position)
+    local char = game.Players.LocalPlayer.Character
+    local ti = TweenInfo.new(5, Enum.EasingStyle.Linear)
+    local tp = {CFrame = position}
+    local tween = game:GetService("TweenService"):Create(char.HumanoidRootPart, ti, tp)
+    tween:Play()
+    tween.Completed:Wait()
+end
 
 function doAutoEgg()
-    if SelectedEgg == "Common Egg" and getgenv().AutoEgg then
-        local New_CFrame = CFrame.new(-7, 9, -82)
-        local char = game.Players.LocalPlayer.Character
-        local ti = TweenInfo.new(5, Enum.EasingStyle.Linear)
-        local tp = {CFrame = New_CFrame}
-        local tween = game:GetService("TweenService"):Create(char.HumanoidRootPart, ti, tp)
-        tween:Play()
-        tween.Completed:Wait()
-    end
-    
+
+if getgenv().SelectedEgg == "Common Egg" and getgenv().AutoEgg then
+    teleportToTween(CFrame.new(-7, 9, -82))
+elseif getgenv().SelectedEgg == "Spotted Egg" and getgenv().AutoEgg then
+    teleportToTween(CFrame.new(-7, 10, -71))
+elseif getgenv().SelectedEgg == "Iceshard Egg" and getgenv().AutoEgg then
+    teleportToTween(CFrame.new(-8, 10, -62))
+elseif getgenv().SelectedEgg == "Spikey Egg" and getgenv().AutoEgg then
+    teleportToTween(CFrame.new(-127, 10, 6))
+elseif getgenv().SelectedEgg == "Magma Egg" and getgenv().AutoEgg then
+    teleportToTween(CFrame.new(-135, 10, 0))
+elseif getgenv().SelectedEgg == "Crystal Egg" and getgenv().AutoEgg then
+    teleportToTween(CFrame.new(-140, 10, -8))
+elseif getgenv().SelectedEgg == "Lunar Egg" and getgenv().AutoEgg then
+    teleportToTween(CFrame.new(-145, 10, -15))
+elseif getgenv().SelectedEgg == "Void Egg" and getgenv().AutoEgg then
+    teleportToTween(CFrame.new(-146, 10, -25))
+elseif getgenv().SelectedEgg == "Hell Egg" and getgenv().AutoEgg then
+    teleportToTween(CFrame.new(-146, 10, -34))
+elseif getgenv().SelectedEgg == "Nightmare Egg" and getgenv().AutoEgg then
+    teleportToTween(CFrame.new(-142, 10, -44))
+elseif getgenv().SelectedEgg == "Rainbow Egg" and getgenv().AutoEgg then
+    teleportToTween(CFrame.new(-137, 10, -52))
+elseif getgenv().SelectedEgg == "Throwback Egg" and getgenv().AutoEgg then
+    teleportToTween(CFrame.new(-130, 10, -59))
+elseif getgenv().SelectedEgg == "100M Egg" and getgenv().AutoEgg then
+    teleportToTween(CFrame.new(14, 9, -8))
+end
+
     while getgenv().AutoEgg and wait() do
-        if SelectedEgg == "Common Egg" then
-            local args = {[1] = "HatchEgg", [2] = "Common Egg", [3] = getgenv().Amount}
+            local args = {[1] = "HatchEgg", [2] = getgenv().SelectedEgg, [3] = getgenv().Amount}
             game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
-        end
     end    
 end
 function doSpamEgg()
@@ -126,7 +162,7 @@ function doSpamEgg()
 end
 Eggs:Label("Auto Hatch Eggs! (PLEASE DON'T MOVE WHILE TELEPORTING OR IT MIGHT CAUSE ISSUES!)")
 
-local EggsDrop = Eggs:Dropdown("Choose egg",{"Common Egg","Spotted Egg","Iceshard Egg","Option 4","Option 5"}, function(bool)
+local EggsDrop = Eggs:Dropdown("Choose egg",{"Common Egg","Spotted Egg","Iceshard Egg","Spikey Egg","Magma Egg","Crystal Egg","Lunar Egg","Void Egg","Hell Egg","Nightmare Egg","Rainbow Egg","Throwback Egg","100M Egg"}, function(bool)
     print("Selected Egg: ".. bool)
     getgenv().SelectedEgg = bool
 end)
