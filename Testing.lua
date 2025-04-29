@@ -152,104 +152,6 @@ function doSpamEgg()
         game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer("HatchEgg", getgenv().SelectedEgg, getgenv().Amount)
     end
 end
-function doComp()
-    local competitiveFrame = game.Players.LocalPlayer.PlayerGui.ScreenGui.Competitive.Frame.Content.Tasks
-    
-    local chosenFrame = nil
-    local leftmostX = math.huge
-    local bottommostY = -math.huge
-    for i, v in pairs(competitiveFrame:GetChildren()) do
-        if v.Name == "Template" then
-            if v.Visible then
-                if v.AbsolutePosition.X < leftmostX then
-                    leftmostX = v.AbsolutePosition.X
-                    bottommostY = v.AbsolutePosition.Y
-                    chosenFrame = v
-                elseif v.AbsolutePosition.X == leftmostX then
-                    if v.AbsolutePosition.Y > bottommostY then
-                        bottommostY = v.AbsolutePosition.Y
-                        chosenFrame = v
-                    end
-                end
-            end
-        end
-    end
-    if chosenFrame then
-        print("Chosen frame: " .. chosenFrame.Name)
-        local label = chosenFrame:FindFirstChild("Content") and chosenFrame.Content:FindFirstChild("Label")
-        if label then
-            print("Label Text: " .. label.Text)
-        else
-            print("Label not found.")
-        end
-        chosenFrame.BackgroundColor3 = Color3.fromRGB(253, 253, 150)
-        print("Background color of chosen frame set to pastel yellow.")
-    else
-        print("No visible Template frame found.")
-    end
-    
-    for i, v in pairs(competitiveFrame:GetChildren()) do
-        if v.Name == "Template" and v.BackgroundColor3 == Color3.fromRGB(253, 253, 150) then
-            local content = v:FindFirstChild("Content")
-            if content then
-                local label = content:FindFirstChild("Label")
-                if label then
-                    if string.find(label.Text, "Mythic") then
-                        print("Mythic found!")
-                        local args = {[1] = "CompetitiveReroll",[2] = 3}
-                        game:GetService("ReplicatedStorage"):WaitForChild("Shared"):WaitForChild("Framework"):WaitForChild("Network"):WaitForChild("Remote"):WaitForChild("Event"):FireServer(unpack(args))
-                    elseif string.find(label.Text, "Shiny") and getgenv().AutoComp then
-                        print("Shiny")
-                        teleportToTween(CFrame.new(14, 9, -8))
-                    elseif string.find(label.Text, "Play") and getgenv().AutoComp then
-                        print("Play")
-                        teleportToTween(CFrame.new(14, 9, -8))
-                    elseif string.match(label.Text, "Common") and getgenv().AutoComp then
-                        print("Common")
-                        teleportToTween(CFrame.new(-7, 9, -82))
-                    elseif string.match(label.Text, "Spotted") and getgenv().AutoComp then
-                        print("Spotted")
-                        teleportToTween(CFrame.new(-7, 10, -71))
-                    elseif string.match(label.Text, "Iceshard") and getgenv().AutoComp then
-                        print("Iceshard")
-                        teleportToTween(CFrame.new(-8, 10, -62))
-                    elseif string.match(label.Text, "Spikey") and getgenv().AutoComp then
-                        print("Spikey")
-                        teleportToTween(CFrame.new(-127, 10, 6))
-                    elseif string.match(label.Text, "Magma") and getgenv().AutoComp then
-                        print("Magma")
-                        teleportToTween(CFrame.new(-135, 10, 0))
-                    elseif string.match(label.Text, "Crystal") and getgenv().AutoComp then
-                        print("Crystal")
-                        teleportToTween(CFrame.new(-140, 10, -8))
-                    elseif string.match(label.Text, "Lunar") and getgenv().AutoComp then
-                        print("Lunar")
-                        teleportToTween(CFrame.new(-145, 10, -15))
-                    elseif string.match(label.Text, "Void") and getgenv().AutoComp then
-                        print("Void")
-                        teleportToTween(CFrame.new(-146, 10, -25))
-                    elseif string.match(label.Text, "Hell") and getgenv().AutoComp then
-                        print("Hell")
-                        teleportToTween(CFrame.new(-146, 10, -34))
-                    elseif string.match(label.Text, "Nightmare") and getgenv().AutoComp then
-                        print("Nightmare")
-                        teleportToTween(CFrame.new(-142, 10, -44))
-                    elseif string.match(label.Text, "Rainbow") and getgenv().AutoComp then
-                        print("Rainbow")
-                        teleportToTween(CFrame.new(-137, 10, -52))
-                    elseif string.match(label.Text, "Throwback") and getgenv().AutoComp then
-                        print("Throwback")
-                        teleportToTween(CFrame.new(-130, 10, -59))
-                    end
-                else
-                    print("Label not found.")
-                end
-            else
-                print("Content not found.")
-            end
-        end
-    end
-end
 
 print("[CakeHub]: Functions Loaded!")
 
@@ -335,7 +237,7 @@ end)
 print("[CakeHub]: 'Teleports' Tab Loaded!")
 
 -- [ COMP ]
-local Comp = w1:Channel("Competitive")
+--[[local Comp = w1:Channel("Competitive")
 
 Comp:Toggle("Auto Teleport 3rd comp task! [BETA]",false, function(bool)
     getgenv().AutoComp = bool
@@ -353,7 +255,7 @@ Comp:Toggle("Spam R (Auto Hatch)",false, function(bool)
 end)
 
 print("[CakeHub]: 'Competitive' Tab Loaded!")
-
+]]--
 -- [ DISCORD ]
 local Discord = w1:Channel("Discord Server")
 Discord:Label(getgenv().ServerInvite)
