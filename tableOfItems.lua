@@ -41,7 +41,7 @@ getgenv().tableOfItems = {
 	["Frog"] = 20000, ["Frost Dragon"] = 20000, ["Fire Dragon"] = 20000,
 	["Bunny"] = 20000, ["Rose Backsword"] = 20000, ["New Years Greatsword"] = 20000,
 	["Flowing Katana"] = 20000, ["Soulreaper's Scythe"] = 20000, ["Sci Fi Axe"] = 20000,
-	["Mortal's Demise"] = 20000, ["Kitsune"] = 20000, ["Slam Ember Axe"] = 20000,
+	["Mortal's Demise"] = 20000, ["Kitsune"] = 20000, ["Siam Ember Axe"] = 20000,
 	["Polar Bear"] = 20000, ["Sandstorm Slasher"] = 20000, ["Reindeer"] = 20000,
 	["Penguin"] = 20000, ["Mummy's Curse"] = 20000, ["Plasma Beam Blade"] = 20000,
 	["Bloom Shuriken"] = 20000, ["Royal Duality"] = 20000, ["Seraphim"] = 20000,
