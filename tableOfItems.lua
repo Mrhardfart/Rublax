@@ -1,5 +1,5 @@
 getgenv().tableOfItems = {
-	["Prince Blade"] = 1400, ["Witch's Curse"] = 1200, ["Office Spin"] = 100,
+	["Prince Blade"] = 1400, ["Witch's Curse"] = 1200, ["Office Spin"] = 50,
 	["Crystal Greatblade"] = 600, ["Tropical Splash"] = 100, --["Lily Katana"] = 5000,
 	["Rose Gift"] = 6200, ["King Explosion"] = 350, ["Cherry Blossom Tree"] = 490,
 	["Chroma Blade Explosion"] = 1100, ["Floppy Chicken Explosion"] = 950,
