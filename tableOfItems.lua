@@ -26,7 +26,7 @@ getgenv().tableOfItems = {
 	["Orbital [NEBULA YORU]"] = 1200, ["Rabiscada"] = 1650,
 	["King Throne"] = 3800, ["Dancinha"] = 2800, ["Dual Chroma Set Explosion"] = 2000,
 	["Seraphim Gate"] = 4200, ["Judgement"] = 600, ["Dual Ghostwisp"] = 600,
-	["Moon Discovery"] = 400, ["Montagem Tomada"] = 6500,
+	["Moon Discovery"] = 400, ["Montagem Tomada"] = 4000,
 	["King Blade"] = 9800, ["Moonflower Katana"] = 10000, ["Shatterflight Bird"] = 10000,
     ["Chroma DJ"] = 10000, ["Passo Bem Solto"] = 7000, ["Hug"] = 9000,
     ["Zombie Slide"] = 10000, ["Penguin Emote"] = 6000, ["Queen Throne"] = 5000,
