@@ -3,7 +3,7 @@ getgenv().tableOfItems = {
 	["Crystal Greatblade"] = 600, ["Tropical Splash"] = 70, --["Lily Katana"] = 5000,
 	["Rose Gift"] = 6200, ["King Explosion"] = 350, ["Cherry Blossom Tree"] = 380,
 	["Chroma Blade Explosion"] = 1100, ["Floppy Chicken Explosion"] = 950,
-	["Devil's Curse"] = 1000, ["Katana Chroma Explosion"] = 1900,
+	["Devil's Curse"] = 1000, ["Katana Chroma Explosion"] = 1800,
 	["Queen Explosion"] = 630, ["Yin Yang Greatsword Explosion"] = 600,
 	["Evil Deal"] = 1100, ["Eggsplosive Exit"] = 1300,
 	["Chroma Oni Katana Explosion"] = 1200, ["Sweet Headshot"] = 280,
