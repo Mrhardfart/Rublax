@@ -8,7 +8,7 @@ getgenv().tableOfItems = {
 	["Evil Deal"] = 1000, ["Eggsplosive Exit"] = 1300,
 	["Chroma Oni Katana Explosion"] = 1100, ["Sweet Headshot"] = 280,
 	["Prismatic Odachi Explosion"] = 300, ["Blossom Blade"] = 400,
-	["Void Blade"] = 1050, ["Emperor Blade"] = 1000, ["Crystal Blade"] = 1200,
+	["Void Blade"] = 1050, ["Emperor Blade"] = 1000, ["Crystal Blade"] = 1000,
 	["Northern Fury"] = 300, ["Dual Wispwind Reaper"] = 1100,
 	["Dual Royal Blades"] = 3700, ["Dual Chroma Blasters"] = 2200,
 	["Golden Champion"] = 2000, ["Yin Yang Parasol"] = 1500,
