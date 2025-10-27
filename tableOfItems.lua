@@ -10,7 +10,7 @@ getgenv().tableOfItems = {
 	["Prismatic Odachi Explosion"] = 300, ["Blossom Blade"] = 400,
 	["Void Blade"] = 1050, ["Emperor Blade"] = 1000, ["Crystal Blade"] = 1000,
 	["Northern Fury"] = 300, ["Dual Wispwind Reaper"] = 1100,
-	["Dual Royal Blades"] = 3700, ["Dual Chroma Blasters"] = 2200,
+	["Dual Royal Blades"] = 3000, ["Dual Chroma Blasters"] = 2200,
 	["Golden Champion"] = 2000, ["Yin Yang Parasol"] = 1500,
 	["Dual Voltfire Lash"] = 1500, ["Oceanic Reaper"] = 1200,
 	["Dual Abyssal Set"] = 1200, ["Lunar Parasol"] = 650,
