@@ -48,7 +48,7 @@ getgenv().tableOfItems = {
 	["Polar Bear"] = 20000, ["Sandstorm Slasher"] = 20000, ["Reindeer"] = 20000,
 	["Penguin"] = 20000, ["Mummy's Curse"] = 20000, ["Plasma Beam Blade"] = 20000,
 	["Bloom Shuriken"] = 20000, ["Royal Duality"] = 20000, ["Seraphim"] = 20000,
-	["Serpent"] = 20000, ["Cosmic Wrath"] = 20000
+	["Serpent"] = 20000, ["Cosmic Wrath"] = 20000,
 
     -- Emotes
     ["Rose Gift"] = 6200,
