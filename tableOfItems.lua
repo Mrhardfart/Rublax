@@ -20,7 +20,7 @@ getgenv().tableOfItems = {
 	["Dual Serene Scythe"] = 500, ["Mummy's Slasher"] = 650,
 	["Spring Slicer"] = 590, ["Flowing Fists"] = 480,
 	["Dual Princess Katana"] = 400, ["Wind Thorn"] = 350,
-	["Eternal Scythe"] = 2800, ["Floppy Chicken"] = 2900,
+	["Eternal Scythe"] = 2800, ["Floppy Chicken"] = 2800,
 	["Starshooter Rapier"] = 1250, ["Dual Soulless Katana"] = 1000,
 	["Wavelight"] = 360, ["Menacing"] = 280, ["Chroma Blade Emote"] = 650,
 	["Orbital [NEBULA YORU]"] = 1200, ["Rabiscada"] = 1650,
