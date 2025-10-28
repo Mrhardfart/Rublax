@@ -199,7 +199,6 @@ getgenv().tableOfItems = {
     ["Phoenix Rebirth Emote"] = 10000,
     ["Mythical Enchanter"] = 9000,
     ["Penguin Emote"] = 5000,
-    ["Event Horizon"] = 700,
     ["Spinalis Emote"] = 1000,
     ["Dual Leviathan Set Emote"] = 1000,
     ["Oni Ghost Emote"] = 1000,
