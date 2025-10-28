@@ -99,7 +99,6 @@ getgenv().tableOfItems = {
 ["Crystal Reaver"] = 20000,
 ["Winter's Wrath"] = 20000,
 ["Ethereal Sovereign"] = 20000,
-["Starfall"] = 20000,
 ["Dual Chroma Energy Sword"] = 20000,
 ["Voidhunter Scythe"] = 20000,
 ["Thorned Coilblade"] = 20000,
