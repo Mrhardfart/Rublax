@@ -237,7 +237,7 @@ getgenv().tableOfItems = {
     ["Seraphim Gate"] = 4200,
 	["Judgement"] = 600,
 	["Dual Ghostwisp"] = 600,
-	["Moon Discovery"] = 400,
+	["Moon Discovery"] = 300,
     
 	-- dreaming is free
 
