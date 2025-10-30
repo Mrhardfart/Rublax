@@ -222,11 +222,11 @@ getgenv().tableOfItems = {
     -- Explosions
 	["King Explosion"] = 350, 
     ["Cherry Blossom Tree"] = 380,
-	["Chroma Blade Explosion"] = 1100, 
+	["Chroma Blade Explosion"] = 900, 
     ["Floppy Chicken Explosion"] = 950,
 	["Devil's Curse"] = 1000, 
     ["Katana Chroma Explosion"] = 1800,
-	["Queen Explosion"] = 630, 
+	["Queen Explosion"] = 500, 
     ["Yin Yang Greatsword Explosion"] = 600,
 	["Evil Deal"] = 1000, 
     ["Eggsplosive Exit"] = 1300,
