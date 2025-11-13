@@ -229,7 +229,7 @@ getgenv().tableOfItems = {
 
     -- Emotes
 	
-["Rose Gift"] = 6200,
+["Rose Gift"] = 6000,
 ["Office Spin"] = 50,
 ["Chroma Blade Emote"] = 650,
 ["Orbital [NEBULA YORU]"] = 1200,
