@@ -231,7 +231,7 @@ getgenv().tableOfItems = {
 	
 ["Rose Gift"] = 6000,
 ["Office Spin"] = 50,
-["Chroma Blade Emote"] = 650,
+["Chroma Blade Emote"] = 550,
 ["Orbital [NEBULA YORU]"] = 1200,
 ["Rabiscada"] = 1400,
 ["King Throne"] = 3400,
