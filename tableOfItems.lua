@@ -1,7 +1,7 @@
 getgenv().tableOfItems = {
     
 	-- Swords
-
+["Venomshank"] = 1,
 ["Ghostwalker"] = 1,
 ["Gyaru Katana"] = 3800,
 ["Sakura´s Requiem"] = 3800,	
